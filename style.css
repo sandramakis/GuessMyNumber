@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  color: #ddd;
+  font-family: "Changa", sans-serif;
+}
+
+header {
+  padding: 20px;
+  position: relative;
+}
+
+header div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h2 {
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+header p {
+  font-size: 13px;
+}
+
+.btn {
+  padding: 5px 15px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+header .horr-line {
+  background-color: #eee;
+  margin-top: 50px;
+  height: 4px;
+}
+
+div.my-number {
+  height: 50px;
+  width: 60px;
+  position: absolute;
+  top: 75%;
+  left: 45%;
+  background-color: #eee;
+  color: #222;
+  padding-left: 20px;
+  font-size: 40px;
+}
+
+form {
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+form input {
+  width: 120px;
+  height: 50px;
+  background-color: #111;
+  color: #bbb;
+  border: 1px solid white;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+form button {
+  margin: 15px;
+}
