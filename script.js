@@ -68,6 +68,4 @@ document.querySelector(".again").addEventListener("click", function (e) {
 
   document.querySelector("body").style.backgroundColor = "#111";
   document.querySelector(".my-number").style.width = "5rem";
-
-  document.querySelector(".my-number").textContent = secretNumber;
 });
