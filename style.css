@@ -45,16 +45,19 @@ header .horr-line {
   height: 4px;
 }
 
+main {
+  padding: 20% 0;
+}
+
 div.my-number {
-  height: 50px;
-  width: 60px;
+  width: 5rem;
   position: absolute;
-  top: 75%;
+  top: 65%;
   left: 45%;
   background-color: #eee;
   color: #222;
-  padding-left: 20px;
-  font-size: 40px;
+  padding: 0.5rem 1.5rem;
+  font-size: 3rem;
 }
 
 form {
