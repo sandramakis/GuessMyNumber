@@ -7,7 +7,7 @@
 body {
   background-color: #111;
   color: #ddd;
-  font-family: "Changa", sans-serif;
+  font-family: "Press Start 2P", cursive;
 }
 
 header {
@@ -22,13 +22,14 @@ header div {
 }
 
 header h2 {
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   letter-spacing: 3px;
+  padding: 2rem 1rem;
 }
 
-header p {
-  font-size: 13px;
+p {
+  font-size: 10px;
 }
 
 .btn {
@@ -46,25 +47,25 @@ header .horr-line {
 }
 
 main {
-  padding: 20% 0;
+  padding: 5rem 1rem;
 }
 
 div.my-number {
   width: 5rem;
   position: absolute;
-  top: 65%;
+  top: 75%;
   left: 45%;
   background-color: #eee;
   color: #222;
   padding: 0.5rem 1.5rem;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 form {
   padding-top: 50px;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: start;
 }
 
 form input {
@@ -80,4 +81,16 @@ form input {
 
 form button {
   margin: 15px;
+}
+
+p.message {
+  padding-bottom: 3rem;
+}
+
+/* SCREEN SIZES (MEDIA QUERY) */
+/* Screens lower than 768px  */
+@media screen and (max-width: 768px) {
+  div.my-number {
+    left: 40%;
+  }
 }
