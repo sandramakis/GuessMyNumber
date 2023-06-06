@@ -4,44 +4,51 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highScore = 0;
 
+// Declaring re-useable functions
+const displayMessage = function (message) {
+  document.querySelector(".message").textContent = message;
+};
+
+const scoreMessage = function (score) {
+  document.querySelector(".score").textContent = score;
+};
+
+const displayNumber = function (value) {
+  document.querySelector(".my-number").textContent = value;
+};
+
 // CLICK BUTTON FUNCTION
 document.querySelector(".check").addEventListener("click", function (e) {
   e.preventDefault();
+
   const guessedNo = Number(document.querySelector(".guess").value);
   console.log(guessedNo);
 
   // When input is not a number or empty
   if (!guessedNo) {
-    document.querySelector(".message").textContent = "⛔ Not a number!";
+    displayMessage("⛔ Not a number!");
+    score--;
+    scoreMessage(`💎 Score: ${score}`);
   }
 
-  // when the input is HIGH
-  else if (guessedNo > secretNumber) {
-    if (score > 1) {
-      document.querySelector(".message").textContent = "📈 Too High!";
-      score--;
-      document.querySelector(".score").textContent = `💎 Score: ${score}`;
-    } else {
-      document.querySelector(".message").textContent = "☹😥 You Lost the Game!";
-      document.querySelector(".score").textContent = `💎 Score: 0`;
-    }
-  }
+  // when the input is INCORRECT
+  else if (guessedNo !== secretNumber) {
+    score--;
+    guessedNo > secretNumber
+      ? displayMessage("📈 Too High!")
+      : displayMessage("📉 Too Low!");
 
-  // when the input is LOW
-  else if (guessedNo < secretNumber) {
     if (score > 1) {
-      document.querySelector(".message").textContent = "📉 Too Low!";
-      score--;
-      document.querySelector(".score").textContent = `💎 Score: ${score}`;
+      scoreMessage(`💎 Score: ${score}`);
     } else {
-      document.querySelector(".message").textContent = "☹😥 You Lost the Game!";
-      document.querySelector(".score").textContent = `💎 Score: 0`;
+      displayMessage("☹😥 You Lost the Game!");
+      scoreMessage(`💎 Score: 0`);
     }
   }
 
   // when the input is CORRECT
   else if (guessedNo === secretNumber) {
-    document.querySelector(".message").textContent = "🎉 Correct Number!";
+    displayMessage("🎉 Correct Number!");
     document.querySelector(".my-number").textContent = secretNumber;
     document.querySelector(".my-number").style.width = "8rem";
     document.querySelector("body").style.backgroundColor = "#60b347";
@@ -61,11 +68,11 @@ document.querySelector(".again").addEventListener("click", function (e) {
   e.preventDefault();
   score = 20;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
-  document.querySelector(".message").textContent = "Start guessing. . .";
-  document.querySelector(".score").textContent = `💎 Score: ${score}`;
-  document.querySelector(".my-number").textContent = "?";
+  displayMessage("Start guessing. . .");
+  scoreMessage(`💎 Score: ${score}`);
+  displayNumber("?");
   document.querySelector(".guess").value = "";
 
   document.querySelector("body").style.backgroundColor = "#111";
-  document.querySelector(".my-number").style.width = "5rem";
+  document.querySelector(".my-number").style.width = "4.7rem";
 });
