@@ -34,6 +34,7 @@ p {
 
 .btn {
   padding: 5px 15px;
+  font-size: 1rem;
 }
 
 button:hover {
@@ -47,7 +48,7 @@ header .horr-line {
 }
 
 main {
-  padding: 5rem 1rem;
+  padding: 6rem 1rem;
 }
 
 div.my-number {
