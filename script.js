@@ -82,11 +82,12 @@ document.querySelector(".again").addEventListener("click", function (e) {
 let helpButton = document.querySelector(".help");
 let modal = document.querySelector(".modal");
 let overlay = document.querySelector(".overlay");
-let closeModal = document.querySelector(".close-modal");
+let exitModal = document.querySelector(".close-modal");
 
 console.log(helpButton, modal, overlay);
 
-helpButton.addEventListener("click", function () {
+// Open Modal Fctn
+const showModal = function () {
   if (modal.classList.contains("hidden")) {
     modal.classList.remove("hidden");
     overlay.classList.remove("hidden");
@@ -94,14 +95,24 @@ helpButton.addEventListener("click", function () {
     modal.classList.add("hidden");
     overlay.classList.add("hidden");
   }
-});
+};
 
-overlay.addEventListener("click", function () {
+// Close Modal Fctn
+const closeModal = function () {
   overlay.classList.add("hidden");
   modal.classList.add("hidden");
-});
+};
 
-closeModal.addEventListener("click", function () {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
+// Assigning the functions to an event listener
+helpButton.addEventListener("click", showModal);
+overlay.addEventListener("click", closeModal);
+exitModal.addEventListener("click", closeModal);
+
+// Using the Esc Key to close the modal
+document.addEventListener("keydown", function (event) {
+  console.log(event.key);
+
+  if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+    closeModal();
+  }
 });
