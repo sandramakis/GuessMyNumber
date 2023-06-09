@@ -15,6 +15,7 @@
       <div>
         <button class="btn again">Again!</button>
         <p>(Between 1 and 20)</p>
+        <button class="btn help">HELP!</button>
       </div>
       <h2>Guess My Number!</h2>
 
@@ -23,6 +24,22 @@
     </header>
 
     <main>
+      <div class="modal hidden">
+        <button class="close-modal">&times</button>
+        <p class="modal-message">
+          How To Play? <br />
+          1. The computer generates random numbers from 1-20. <br />
+          2. In each round, you're expected to guess the same number the
+          computer has. <br />
+          3. For each wrong trial, a score is deducted from your initial 20.
+          <br />
+          4. A new highscore is made when your new score is higher than the
+          former highscore
+        </p>
+      </div>
+
+      <div class="overlay hidden"></div>
+
       <form action="">
         <section>
           <input class="guess" type="number" name="guess" id="guess" />

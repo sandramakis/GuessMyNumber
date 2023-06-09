@@ -76,3 +76,32 @@ document.querySelector(".again").addEventListener("click", function (e) {
   document.querySelector("body").style.backgroundColor = "#111";
   document.querySelector(".my-number").style.width = "4.7rem";
 });
+
+// HELP MODAL WINDOW
+
+let helpButton = document.querySelector(".help");
+let modal = document.querySelector(".modal");
+let overlay = document.querySelector(".overlay");
+let closeModal = document.querySelector(".close-modal");
+
+console.log(helpButton, modal, overlay);
+
+helpButton.addEventListener("click", function () {
+  if (modal.classList.contains("hidden")) {
+    modal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+  } else {
+    modal.classList.add("hidden");
+    overlay.classList.add("hidden");
+  }
+});
+
+overlay.addEventListener("click", function () {
+  overlay.classList.add("hidden");
+  modal.classList.add("hidden");
+});
+
+closeModal.addEventListener("click", function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+});
